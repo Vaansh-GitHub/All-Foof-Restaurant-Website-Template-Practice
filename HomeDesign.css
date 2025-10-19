@@ -1,0 +1,109 @@
+.header{
+    position:relative;
+    top:0;
+    height:120vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+.header img{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    object-position: 50% 100%;
+    z-index:-1;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap:35px;
+}
+.container *{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+.header .container *{
+    transform: translateX(-100%);
+    visibility: hidden;
+    animation: showUp 1.5s 0.3s cubic-bezier(0.09, 0.36, 0.09, 1) forwards;
+}
+.container p:first-child{
+    color: #ff5600;
+}
+.container h1{
+    font-size: 60px;
+    font-family: "Josefin Sans", sans-serif;
+}
+.header  .container h1{
+    animation: showUp 2s 0.3s cubic-bezier(0.09, 0.36, 0.09, 1) forwards;
+}
+ .header .container .button{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    position:relative;
+    border: 1px solid #ff5600;
+    background-color: #ff5600;
+    border-radius: 5px;
+    cursor: pointer;
+    width:max-content;
+    height: max-content;
+    padding:20px 35px;
+ }
+.header .container .button a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+.header .container .button::before{
+    content:"";
+    position:absolute;
+    background-color:#d85210;
+    width:0;
+    height:100%;
+    left:0;
+    z-index:0;
+    transition: width 0.5s ease;
+}
+.header .container .button:hover::before{
+    width:100%;
+}
+.header .container {
+    width:50%;
+    position:absolute;
+    top:30%;
+    left:15%;
+}
+
+
+@keyframes showUp{
+    from{
+        
+    }
+    to{
+        transform:translateX(0);
+        visibility: visible;
+    }
+}
+
+@media only screen and (max-width:900px),(max-height:450px){
+    .container h1{
+        font-size: 40px;
+    }
+}
+@media only screen and (max-width:670px){
+    .container h1{
+        font-size: 30px;
+    }
+    .container{
+        top:20%;
+        width:100%;
+    }
+}
